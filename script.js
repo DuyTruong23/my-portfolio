@@ -10,6 +10,7 @@ import {
 } from './constant.js';
 
 const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
 
 const renderTabs = () => {
   const navElement = $('#nav');
@@ -27,16 +28,18 @@ const renderTabs = () => {
 };
 
 const renderSocials = () => {
-  const socialElement = $('#social');
-  socialElement.innerHTML = socials
-    .map(
-      (item, index) => `
-    <a href=${item.url} key=${index} class=${item.class}>
-      ${item.buttonIcon}
-    </a>
-  `
-    )
-    .join('');
+  const socialElements = $$('#social');
+  socialElements.forEach((socialElement, index) => {
+    socialElement.innerHTML = socials
+      .map(
+        (item) => `
+      <a href=${item.url} key=${index} class=${item.class}>
+        ${item.buttonIcon}
+      </a>
+    `
+      )
+      .join('');
+  });
 };
 
 const renderInformation = () => {

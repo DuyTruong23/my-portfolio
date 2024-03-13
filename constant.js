@@ -273,7 +273,7 @@ const contact = [
     id: 1,
     class: ' address',
     title: 'Location',
-    description: 'District 12, Ho Chi Minh City, VietNam',
+    description: 'District 11, Ho Chi Minh City, VietNam',
     buttonIcon: 'bi bi-geo-alt',
     tag: '',
   },
